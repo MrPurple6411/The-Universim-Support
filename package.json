@@ -1,0 +1,66 @@
+{
+  "name": "the-universim-support",
+  "version": "1.0.0",
+  "description": "Vortex support for The Universim",
+  "license": "GPL-3.0",
+  "author": "toebeann, MrPurple6411, Chloe S, AlexejheroYTB",
+  "homepage": "https://github.com/MrPurple6411/The-Universim-Support",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrPurple6411/The-Universim-Support.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MrPurple6411/The-Universim-Support/issues"
+  },
+  "funding": [
+    "https://github.com/MrPurple6411/The-Universim-Support?sponsor=1",
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/MrPurple6411"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/MrPurple6411"
+    },
+    {
+      "type": "paypal",
+      "url": "https://paypal.me/MrPurple6411"
+    }
+  ],
+  "config": {
+    "issueTracker": "https://github.com/MrPurple6411/The-Universim-Support/issues"
+  },
+  "scripts": {
+    "webpack": "webpack --config webpack.config.js --display-error-details --progress --profile --color",
+    "build": "rimraf dist && mkdir dist && extractInfo && pnpm webpack",
+    "bundle": "pnpm build && rimraf the-universim-support.7z && 7z a -t7z the-universim-support.7z ./assets/* && 7z a -t7z the-universim-support.7z ./dist/*",
+    "release": "pnpm build --mode production --devtool none && rimraf the-universim-support.7z && 7z a -t7z the-universim-support.7z ./assets/* && 7z a -t7z the-universim-support.7z ./dist/*"
+  },
+  "devDependencies": {
+    "@total-typescript/ts-reset": "^0.4.2",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/i18next": "^8.4.6",
+    "@types/node": "^20.2.5",
+    "@types/relaxed-json": "^1.0.1",
+    "@types/semver": "^7.5.0",
+    "exe-version": "github:Nexus-Mods/node-exe-version",
+    "raw-loader": "^4.0.2",
+    "rehype-format": "^4.0.1",
+    "rehype-stringify": "^9.0.3",
+    "relaxed-json": "^1.0.3",
+    "remark": "^14.0.3",
+    "remark-rehype": "^10.1.0",
+    "rimraf": "^5.0.1",
+    "store2": "^2.14.2",
+    "strip-markdown": "^5.0.1",
+    "ts-loader": "^8.4.0",
+    "typescript": "^5.0.4",
+    "vortex-api": "github:Nexus-Mods/vortex-api",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "zod": "^3.21.4"
+  },
+  "engines": {
+    "node": "^16"
+  }
+}
